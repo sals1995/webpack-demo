@@ -55,9 +55,6 @@ module.exports = {
     }
     , plugins: [
         new HtmlWebpackPlugin({ title:'output',filename:'index.html', inject: 'body' }),
-        new TerserPlugin({
-            extractComments: false,
-          }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin()
     ],
@@ -66,6 +63,15 @@ module.exports = {
     minimizer: [
       // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
       `...`,
+      //or for prevent create LICENSE.txt file
+      new TerserPlugin({
+        terserOptions: {
+            format: {
+                comments: false,
+            },
+        },
+        extractComments: false,
+    }),
       new CssMinimizerPlugin(),
     ],
   },
