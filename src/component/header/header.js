@@ -1,23 +1,18 @@
-import "./style.scss";
+import "./style.css";
 const element = document.createElement("header");
 
 element.innerHTML = "this is webpack demo";
 element.classList.add('info')
+import photo from '../../assets/image.png'
+const img = document.createElement("img");
+img.src=photo;
+img.style.width="50px"
+img.style.height="50px"
+element.appendChild(img);
 document.body.appendChild(element);
 
-class Person {
-    
-    constructor(fname, lname) {
-       this.fname = fname;
-       this.lname = lname;
-    }
- 
-    get fullname() {
-       return this.fname +" "+this.lname;
-    }
- }
+// nooo
 
- console.log(new Person("sals","hussien"));
 
 
 
