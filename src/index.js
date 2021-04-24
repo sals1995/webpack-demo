@@ -5,4 +5,3 @@ import './component/bio/bio.js';
 import './style.css';
 
 
-// import './component/bio/bio.js';
